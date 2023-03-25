@@ -25,6 +25,8 @@ namespace WPF_project_N_000047
            
         }
 
+        /*--------------------Mouse Enter/Leave EVENTS--------------------*/
+
         private void Sign_in_MouseEnter(object sender, MouseEventArgs e)
         {
             this.Sign_in.Foreground = Brushes.Black;
@@ -43,6 +45,20 @@ namespace WPF_project_N_000047
         private void Sign_up_MouseLeave(object sender, MouseEventArgs e)
         {
             this.Sign_up.Foreground = Brushes.Yellow;
+        }
+
+
+        /*------------------------------------Click EVENTS------------------------------------*/
+        private void Sign_in_Click(object sender, RoutedEventArgs e)
+        {
+            var test = new Window3();
+            test.Show();
+        }
+
+        private void Sign_up_Click(object sender, RoutedEventArgs e)
+        {
+            var windowSUP = new Window1();
+            windowSUP.Show();
         }
     }
 }

@@ -13,6 +13,15 @@
     <None Remove="Assets\Ant man 3 poster.jpg" />
     <None Remove="Assets\Ant man poster.jpg" />
     <None Remove="Assets\avatar 2 poster.jpg" />
+    <None Remove="Assets\Film1\john wick chapter 4 poster.jpg" />
+    <None Remove="Assets\Film2\shazam movie shazam.jpg" />
+    <None Remove="Assets\Film3\avatar 2 poster.jpg" />
+    <None Remove="Assets\Film4\Ant man 3 poster.jpg" />
+    <None Remove="Assets\Film5\Joker poster.jpg" />
+    <None Remove="Assets\Film6\scream 6 poster.jpg" />
+    <None Remove="Assets\Film7\L-o-R poster.jpg" />
+    <None Remove="Assets\Film8\wolverine preview.jpg" />
+    <None Remove="Assets\Film9\Puss in boots poster.jpg" />
     <None Remove="Assets\john wick chapter 4 poster.jpg" />
     <None Remove="Assets\Joker poster.jpg" />
     <None Remove="Assets\L-o-R poster.jpg" />
@@ -23,34 +32,34 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Assets\Ant man 3 poster.jpg">
+    <Resource Include="Assets\Film1\john wick chapter 4 poster.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Assets\avatar 2 poster.jpg">
+    <Resource Include="Assets\Film2\shazam movie shazam.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Assets\john wick chapter 4 poster.jpg">
+    <Resource Include="Assets\Film3\avatar 2 poster.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Assets\Joker poster.jpg">
+    <Resource Include="Assets\Film4\Ant man 3 poster.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Assets\L-o-R poster.jpg">
+    <Resource Include="Assets\Film5\Joker poster.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Film6\scream 6 poster.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Film7\L-o-R poster.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Film8\wolverine preview.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Film9\Puss in boots poster.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Logo.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Puss in boots poster.jpg">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\scream 6 poster.jpg">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\shazam movie shazam.jpg">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\wolverine preview.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

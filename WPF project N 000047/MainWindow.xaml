@@ -25,29 +25,37 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         
-        <Image Source="/Assets/Logo.png" Grid.Column="1" Grid.Row="1" />
-        <Image Source="/Assets/Logo.png" Grid.Column="2" Grid.Row="1" />
-        <Image Source="/Assets/Logo.png" Grid.Column="3" Grid.Row="1" />
-        <Image Source="/Assets/Logo.png" Grid.Column="3" Grid.Row="1" />
-        <Image Source="/Assets/Logo.png" Grid.Column="4" Grid.Row="1" />
-        <Image Source="/Assets/Logo.png" Grid.Column="5" Grid.Row="1" />
-        
-        <Image Source="/Assets/john wick chapter 4 poster.jpg"
+        <Image Source="/Assets/Logo.png" 
+               Grid.Column="1" Grid.Row="1" />
+        <Image Source="/Assets/Logo.png"
+               Grid.Column="2" Grid.Row="1" />
+        <Image Source="/Assets/Logo.png"
+               Grid.Column="3" Grid.Row="1" />
+        <Image Source="/Assets/Logo.png"
+               Grid.Column="3" Grid.Row="1" />
+        <Image Source="/Assets/Logo.png"
+               Grid.Column="4" Grid.Row="1" />
+        <Image Source="/Assets/Logo.png"
+               Grid.Column="5" Grid.Row="1" />
+
+        <Image Source="/Assets/Film1/john wick chapter 4 poster.jpg"
                Grid.Column="5" Grid.Row="2" Stretch="Fill"/>
-        <Image Source="/Assets/shazam movie shazam.jpg"
+        <Image Source="/Assets/Film2/shazam movie shazam.jpg"
                Grid.Column="4" Grid.Row="2" Stretch="Fill"/>
-        <Image Source="/Assets/scream 6 poster.jpg"
+        <Image Source="/Assets/Film6/scream 6 poster.jpg"
                Grid.Column="3" Grid.Row="3" Stretch="Fill"/>
-        <Image Source="/Assets/avatar 2 poster.jpg"
+        <Image Source="/Assets/Film3/avatar 2 poster.jpg"
                Grid.Column="2" Grid.Row="2" Stretch="Fill"/>
-        <Image Source="/Assets/Ant man 3 poster.jpg" 
+        <Image Source="/Assets/Film4/Ant man 3 poster.jpg" 
                Grid.Column="1" Grid.Row="2" Stretch="Fill"/>
-        <Image Source="/Assets/Puss in boots poster.jpg"
+        <Image Source="/Assets/Film9/Puss in boots poster.jpg"
                Grid.Column="1" Grid.Row="3" Stretch="Fill"/>
-        <Image Source="/Assets/Joker poster.jpg"
+        <Image Source="/Assets/Film5/Joker poster.jpg"
                Grid.Column="2" Grid.Row="3" Stretch="Fill"/>
-        <Image Source="/Assets/L-o-R poster.jpg" Grid.Column="4" Grid.Row="3" Stretch="Fill"/>
-        <Image Source="/Assets/wolverine preview.jpg" Grid.Column="5" Grid.Row="3" Stretch="Fill"/>
+        <Image Source="/Assets/Film7/L-o-R poster.jpg" 
+               Grid.Column="4" Grid.Row="3" Stretch="Fill"/>
+        <Image Source="/Assets/Film8/wolverine preview.jpg" 
+               Grid.Column="5" Grid.Row="3" Stretch="Fill"/>
 
         <Grid Grid.Column="3" Grid.Row="2">
             <Grid.RowDefinitions>
@@ -60,10 +68,12 @@
                     Background="Black" Foreground="Yellow"
                     MouseEnter="Sign_in_MouseEnter"
                     MouseLeave="Sign_in_MouseLeave"
+                    Click="Sign_in_Click"
                     Cursor="Hand"/>
             <Button x:Name="Sign_up" Content ="SIGN UP" Grid.Row="2"
                     FontFamily="Monotype Corsiva" FontSize="36" FontWeight="Bold"
                     Background="Black" Foreground="Yellow"
+                    Click="Sign_up_Click"
                     MouseEnter="Sign_up_MouseEnter"
                     MouseLeave="Sign_up_MouseLeave"
                     Cursor="Hand"/>
