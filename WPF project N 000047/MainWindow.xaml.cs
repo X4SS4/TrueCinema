@@ -20,6 +20,8 @@ namespace WPF_project_N_000047
 
     public partial class MainWindow : Window
     {
+
+        public static List<User> users = new();
         public MainWindow()
         {
             InitializeComponent();

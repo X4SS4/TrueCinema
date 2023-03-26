@@ -45,10 +45,10 @@
             </UniformGrid>
             <Button Background="Tomato" 
                     FontWeight="Bold" FontSize="30" FontStyle="Oblique"
-                    Content="Back" Click="Button_Click_1"/>
+                    Content="Back" Click="Back_Button_Click_1"/>
             <Button Background="GreenYellow" 
                     FontWeight="Bold" FontSize="30" FontStyle="Oblique"
-                    Content="Login" Click="Button_Click"/>
+                    Content="Login" Click="Login_Button_Click"/>
         </UniformGrid>
     </Grid>
 </Window>

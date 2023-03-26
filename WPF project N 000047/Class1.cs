@@ -7,7 +7,7 @@ using System.Windows.Automation.Peers;
 
 namespace Cinema
 {
-    class Ticket
+    public class Ticket
     {
         public string? Name { get; set; }
         public string? Surname { get; set; }
@@ -15,7 +15,7 @@ namespace Cinema
         public double Paid_amount { get; set; }
         public int Room { get; set; }
     }
-    class User
+    public class User
     {
 		private string? name;
         private string? surname;
@@ -27,7 +27,7 @@ namespace Cinema
 		public string Name
         {
             get => name;
-            set { if (value.All(character => char.IsLetter(character))) name = value; }
+            set { if (value.All(character => char.IsLetter(character) && value.Length > 1)) name = value; }
         }
         public string Surname
         {

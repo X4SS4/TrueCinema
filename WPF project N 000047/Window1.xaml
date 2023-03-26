@@ -14,43 +14,51 @@
         </Grid.ColumnDefinitions>
 
         <Image Source="Assets\Logo.png" Grid.Column="0"/>
-
+        <Label x:Name="message_label" FontWeight="Bold" Foreground="Red"/>
         <UniformGrid Grid.Column="1" Rows="7" Columns="2" Background="Black">
             <Label FontSize="45" FontStyle="Italic" FontWeight="ExtraBold" 
                    Content="Name" Foreground="Yellow" 
                    HorizontalContentAlignment="Center"
                    VerticalContentAlignment="Center"/>
-            <TextBox HorizontalContentAlignment="Center"
+            <TextBox x:Name="name_TB"
+                     GotFocus="name_TB_GotFocus"
+                     HorizontalContentAlignment="Center"
                      VerticalContentAlignment="Center"
                      Background="Yellow"
                      Foreground="Black"
                      FontSize="20"
                      FontWeight="ExtraBold"
-                     FontStyle="Italic"/>
+                     FontStyle="Italic" TextChanged="name_TB__TextChanged" LostFocus="nameTB_LostFocus"/>
 
             <Label FontSize="40" FontStyle="Italic" FontWeight="ExtraBold"
                    Content="Surname" Foreground="Yellow" 
                    HorizontalContentAlignment="Center"
                    VerticalContentAlignment="Center"/>
-            <TextBox HorizontalContentAlignment="Center"
+            <TextBox x:Name="surname_TB"
+                     GotFocus="surname_TB_GotFocus"
+                     LostFocus="surname_TB_LostFocus"
+                     HorizontalContentAlignment="Center"
                      VerticalContentAlignment="Center"
                      Background="Yellow"
                      Foreground="Black"
                      FontSize="20"
                      FontWeight="ExtraBold"
-                     FontStyle="Italic"/>
+                     FontStyle="Italic" TextChanged="surname_TB_TextChanged"/>
 
             <Label FontSize="40" FontStyle="Italic" FontWeight="ExtraBold" 
                    Content="Login" Foreground="Yellow" 
                    HorizontalContentAlignment="Center"
                    VerticalContentAlignment="Center"/>
-            <TextBox HorizontalContentAlignment="Center" 
+            <TextBox x:Name="login_TB"
+                     GotFocus="login_TB_GotFocus"
+                     LostFocus="login_TB_LostFocus"
+                     HorizontalContentAlignment="Center" 
                      VerticalContentAlignment="Center"
                      Background="Yellow"
                      Foreground="Black"
                      FontSize="20"
                      FontWeight="ExtraBold"
-                     FontStyle="Italic"/>
+                     FontStyle="Italic" TextChanged="login_TB_TextChanged"/>
 
             
 
@@ -58,39 +66,50 @@
                    Content="Password" Foreground="Yellow" 
                    HorizontalContentAlignment="Center"
                    VerticalContentAlignment="Center"/>
-            <TextBox HorizontalContentAlignment="Center" 
+            <TextBox x:Name="password_TB"
+                     LostFocus="password_TB_LostFocus"
+                     TextWrapping="Wrap"
+                     GotFocus="password_TB_GotFocus"
+                     Text="Your password must be at least 8 characters long, contain at least one number and have a mixture of uppercase and lowercase letters without symbols."
+                     HorizontalContentAlignment="Center" 
                      VerticalContentAlignment="Center"
                      Background="Yellow"
                      Foreground="Black"
-                     FontSize="2.5"
+                     FontSize="7"
                      FontWeight="ExtraBold"
-                     FontStyle="Italic"/>
+                     FontStyle="Italic" TextChanged="password_TB_TextChanged"/>
 
             <Label FontSize="25" FontStyle="Italic" FontWeight="ExtraBold"
                    Content="Card Number" Foreground="Yellow" 
                    HorizontalContentAlignment="Center"
                    VerticalContentAlignment="Center"/>
-            <TextBox Text="_ _ _ _-_ _ _ _-_ _ _ _-_ _ _ _" 
+            <TextBox x:Name="cardNumber_TB"
+                     GotFocus="cardNumber_TB_GotFocus"
+                     LostFocus="cardNumber_TB_LostFocus"
+                     Text="_ _ _ _-_ _ _ _-_ _ _ _-_ _ _ _" 
                      HorizontalContentAlignment="Center"
                      VerticalContentAlignment="Center"
                      Background="Yellow"
                      Foreground="Black"
                      FontSize="15"
                      FontWeight="ExtraBold"
-                     FontStyle="Italic"/>
+                     FontStyle="Italic" TextChanged="cardNumber_TB_TextChanged"/>
 
             <Label FontSize="23" FontStyle="Italic" FontWeight="ExtraBold"
                    Content="Mobile Number" Foreground="Yellow"
                    HorizontalContentAlignment="Center"
                    VerticalContentAlignment="Center"/>
-            <TextBox Text="(+994)_ _-_ _ _ _ _ _ _"
+            <TextBox x:Name="mobileNumber_TB"
+                     GotFocus="mobileNumber_TB_GotFocus"
+                     LostFocus="mobileNumber_TB_LostFocus"
+                     Text="(+994)_ _-_ _ _ _ _ _ _"
                      HorizontalContentAlignment="Center" 
                      VerticalContentAlignment="Center"
                      Background="Yellow"
                      Foreground="Black"
                      FontSize="20"
                      FontWeight="ExtraBold"
-                     FontStyle="Italic"/>
+                     FontStyle="Italic" TextChanged="mobileNumber_TB_TextChanged"/>
             
             <Button x:Name="SUPback"
                     Background="Tomato" 

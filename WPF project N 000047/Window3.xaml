@@ -5,12 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_project_N_000047"
         mc:Ignorable="d"
+        Closing="Window_Closing"
         Title="Catalog" Height="600" Width="1150">
     <Grid Background="Yellow">
         <Grid.RowDefinitions>
             <RowDefinition Height="90"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <Label x:Name="Message_Label" FontSize="10" FontWeight="ExtraBold" FontStyle="Italic" Foreground="Green"/>
 
         <UniformGrid Grid.Row="0" Columns="4">
             <Image Source="Assets/Logo.png"/>
@@ -25,7 +27,7 @@
             <UniformGrid Rows="2">
                 <TextBox/>
 
-                <Button Content="Find"
+                <Button x:Name="Find_button" Content="Find"
                         Height="20" 
                         Margin="120, 0, 20, 0"
                         Background="Black"
@@ -34,10 +36,10 @@
             </UniformGrid>
 
 
-            <Button Background="Tomato" 
+            <Button x:Name="Log_out_button" Background="Tomato" 
                     FontWeight="Bold" FontSize="17" FontStyle="Oblique"
-                    Content="Back"
-                Margin="30, 30, 30, 30"/>
+                    Content="Log out"
+                Margin="30, 30, 30, 30" Click="Log_out_button_Click"/>
 
         </UniformGrid>
 

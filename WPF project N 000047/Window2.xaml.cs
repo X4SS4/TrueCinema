@@ -1,8 +1,11 @@
 ﻿using Cinema;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,38 +24,17 @@ namespace WPF_project_N_000047
     public partial class Window2 : Window
     {
         MainWindow? mainWindow;
-        private static List<User> users = new();
-        static StringBuilder temp_password = new StringBuilder();
+        StringBuilder temp_password = new StringBuilder();
 
         public Window2(MainWindow mainWindow)
         {
             InitializeComponent();
+            mainWindow.Hide();
             this.mainWindow = mainWindow;
-            users.Add(new User
-            {
-                Login = "Zabil",
-                Password = "Zabil123"
-            });
-            //User temp = new User();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (users.Any( user => user.Login == Login_box.Text && temp_password.ToString() == user.Password))
-            {
-                var catalog_window = new Window3();
-                catalog_window.Show();
-                Close();
-                mainWindow?.Close();
-            }
-            Error_Label.Content = "Wrong Login or Password";
-            temp_password.Clear();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            mainWindow?.Show();
-            this.Close();
+            //mainWindow.Hide();
+            MainWindow.users.Add(new User { Name = "Zabil", Login = "Xassa", Password = "Zabil123" });
+            //var json = File.ReadAllText("user.json");
+            //users = JsonSerializer.Deserialize<List<User>>(json);
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -73,6 +55,33 @@ namespace WPF_project_N_000047
                 }
             }
             Password_box.Text = hide.ToString();
+        }
+
+        private void Back_Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            mainWindow?.Show();
+            this.Close();
+        }
+
+        private void Login_Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (MainWindow.users.Any(user => user.Login == Login_box.Text && temp_password.ToString() == user.Password))
+            {
+                User? temp_user = new();
+
+                foreach (var item in MainWindow.users) 
+                    if (item.Login == Login_box.Text && temp_password.ToString() == item.Password)
+                        temp_user = item;
+                
+                var catalog_window = new Window3(temp_user, mainWindow);
+                temp_password.Clear();
+                catalog_window.Show();
+                mainWindow?.Hide();
+                mainWindow = null;
+                Close();
+            }
+            Error_Label.Content = "Wrong Login or Password";
+            temp_password.Clear();
         }
     }
 }
