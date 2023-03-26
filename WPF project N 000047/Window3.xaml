@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WPF_project_N_000047"
         mc:Ignorable="d"
         Closing="Window_Closing"
-        Title="Catalog" Height="600" Width="1150">
+        Title="Catalog" Height="600" Width="1300">
     <Grid Background="Yellow">
         <Grid.RowDefinitions>
             <RowDefinition Height="90"/>
@@ -43,244 +43,58 @@
 
         </UniformGrid>
 
-        <ScrollViewer Grid.Row="1">
-            <StackPanel>
-                
-                <Grid Height="300" Background="Black">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="200"/>
-                        <ColumnDefinition Width="750"/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <Image Grid.Column="0" Source="Assets/Film1/john wick chapter 4 poster.jpg" 
+        <ListView x:Name="FilmsLV" Background="Black" Grid.Row="1" ItemsSource="{Binding Films}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Height="300" Background="Black">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="750"/>
+                            <ColumnDefinition Width="450"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" Source="{Binding imagePath}" 
                            Stretch="Fill"
                            HorizontalAlignment="Left"/>
 
-                    <TextBlock Grid.Column="1" 
+                        <TextBlock Grid.Column="1" 
                              Background="Black" 
                              Foreground="Yellow"
                              Padding="50,50,50,50"
                              TextWrapping="WrapWithOverflow"
-                             Text="John Wick uncovers a path to defeating The High Table. But before he can earn his freedom, Wick must face off against a new enemy with powerful alliances across the globe and forces that turn old friends into foes."/>
+                             Text="{Binding filmContent}"/>
 
-                    <DockPanel Grid.Column="2">
-                        <RadioButton x:Name="RB1F1"  FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="08:45" Foreground="Red"/>
-                        <RadioButton x:Name="RB2F1" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="18:45" Foreground="Red"/>
-                        <RadioButton x:Name="RB3F1" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="21:45" Foreground="Red"/>
-                        <RadioButton x:Name="RB4F1" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="01:45" Foreground="Red"/>
-                        <Button      x:Name="ButtonBuyF1" DockPanel.Dock="Bottom" Foreground="White" Background="Green" Content="Buy" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Click="ButtonBuyF1_Click"/>
-                    </DockPanel>
-                </Grid>
+                        <!--<ListView Grid.Column="2" ItemsSource="{Binding seanses}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <RadioButton Grid.Row="0" x:Name="RB1F1"  FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="{Binding seanses[0]}" Foreground="Red"/>
+                                        <RadioButton Grid.Row="1" x:Name="RB2F1" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top"  Content="{Binding seanses[1]}" Foreground="Red"/>
+                                        <RadioButton Grid.Row="2" x:Name="RB3F1" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top"  Content="{Binding seanses[2]}" Foreground="Red"/>
+                                        <RadioButton Grid.Row="3" x:Name="RB4F1" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top"  Content="{Binding seanses[3]}" Foreground="Red"/>
+                                        <Button      Grid.Row="4"  x:Name="ButtonBuyF1" DockPanel.Dock="Bottom" Foreground="White" Background="Green" Content="Buy" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Click="ButtonBuyF1_Click"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>-->
 
-                <Grid Height="300" Background="Black">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="200"/>
-                        <ColumnDefinition Width="750"/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <Image Grid.Column="0" Source="/Assets/Film2/shazam movie shazam.jpg" 
-                           Stretch="Fill"
-                           HorizontalAlignment="Left"/>
-
-                    <TextBlock Grid.Column="1" 
-                             Background="Black" 
-                             Foreground="Yellow"
-                             Padding="50,50,50,50"
-                             TextWrapping="WrapWithOverflow"
-                             Text="Fury of the Gods is a 2023 American superhero film based on the DC Comics character Shazam. Produced by New Line Cinema, DC Studios, and the Safran Company, and distributed by Warner Bros. Pictures, it is the sequel to Shazam! (2019) and the 12th installment in the DC Extended Universe (DCEU)."/>
-
-                    <DockPanel Grid.Column="2">
-                        <RadioButton x:Name="RB1F2" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="08:45" Foreground="Red"/>
-                        <RadioButton x:Name="RB2F2" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="18:45" Foreground="Red"/>
-                        <RadioButton x:Name="RB3F2" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="21:45" Foreground="Red"/>
-                        <RadioButton x:Name="RB4F2" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="01:45" Foreground="Red"/>
-                        <Button      x:Name="ButtonBuyF2" DockPanel.Dock="Bottom" Foreground="White" Background="Green" Content="Buy" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold"/>
-                    </DockPanel>
-
-                </Grid>
-
-                <Grid Height="300" Background="Black">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="200"/>
-                        <ColumnDefinition Width="750"/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <Image Grid.Column="0" Source="/Assets/Film3/avatar 2 poster.jpg" 
-                           Stretch="Fill"
-                           HorizontalAlignment="Left"/>
-
-                    <TextBlock Grid.Column="1" 
-                             Background="Black" 
-                             Foreground="Yellow"
-                             Padding="50,50,50,50"
-                             TextWrapping="WrapWithOverflow"
-                             Text="Jake Sully lives with his newfound family formed on the extrasolar moon Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Na'vi race to protect their home."/>
-
-                    <DockPanel Grid.Column="2">
-                        <RadioButton x:Name="RB1F3" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="08:45" Foreground="Red"/>
-                        <RadioButton x:Name="RB2F3" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="18:45" Foreground="Red"/>
-                        <RadioButton x:Name="RB3F3" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="21:45" Foreground="Red"/>
-                        <RadioButton x:Name="RB4F3" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="01:45" Foreground="Red"/>
-                        <Button      x:Name="ButtonBuyF3" DockPanel.Dock="Bottom" Foreground="White" Background="Green" Content="Buy" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold"/>
-                    </DockPanel>
-                </Grid>
-
-                <Grid Height="300" Background="Black">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="200"/>
-                        <ColumnDefinition Width="750"/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <Image Grid.Column="0" Source="/Assets/Film4/Ant man 3 poster.jpg" 
-                           Stretch="Fill"
-                           HorizontalAlignment="Left"/>
-
-                    <TextBlock Grid.Column="1" 
-                             Background="Black" 
-                             Foreground="Yellow"
-                             Padding="50,50,50,50"
-                             TextWrapping="WrapWithOverflow"
-                             Text="Plot. During her days of entrapment in the Quantum Realm, Janet van Dyne encounters an exiled traveler named Kang. In the present day, after the Battle of Earth, Scott Lang has become a successful memoirist and has been living happily with his girlfriend, Hope van Dyne."/>
-                    <DockPanel Grid.Column="2">
-                        <RadioButton x:Name="RB1F4" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="08:45" Foreground="Red"/>
-                        <RadioButton x:Name="RB2F4" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="18:45" Foreground="Red"/>
-                        <RadioButton x:Name="RB3F4" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="21:45" Foreground="Red"/>
-                        <RadioButton x:Name="RB4F4" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="01:45" Foreground="Red"/>
-                        <Button      x:Name="ButtonBuyF4" DockPanel.Dock="Bottom" Foreground="White" Background="Green" Content="Buy" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold"/>
-                    </DockPanel>
-                </Grid>
-
-                <Grid Height="300" Background="Black">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="200"/>
-                        <ColumnDefinition Width="750"/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <Image Grid.Column="0" Source="/Assets/Film5/Joker poster.jpg"
-                           Stretch="Fill"
-                           HorizontalAlignment="Left"/>
-
-                    <TextBlock Grid.Column="1" 
-                             Background="Black" 
-                             Foreground="Yellow"
-                             Padding="50,50,50,50"
-                             TextWrapping="WrapWithOverflow"
-                             Text="Joaquin Phoenix as Arthur Fleck / Joker: A mentally ill, impoverished party clown and stand-up comedian disregarded by society, whose history of abuse causes him to become a nihilistic criminal with a clown-themed persona."/>
-
-                    <DockPanel Grid.Column="2">
-                        <RadioButton x:Name="RB1F5" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="08:45" Foreground="Red"/>
-                        <RadioButton x:Name="RB2F5" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="18:45" Foreground="Red"/>
-                        <RadioButton x:Name="RB3F5" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="21:45" Foreground="Red"/>
-                        <RadioButton x:Name="RB4F5" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="01:45" Foreground="Red"/>
-                        <Button      x:Name="ButtonBuyF5" DockPanel.Dock="Bottom" Foreground="White" Background="Green" Content="Buy" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold"/>
-                    </DockPanel>
-                </Grid>
-
-                <Grid Height="300" Background="Black">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="200"/>
-                        <ColumnDefinition Width="750"/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <Image Grid.Column="0" Source="Assets/Film6/scream 6 poster.jpg" 
-                           Stretch="Fill"
-                           HorizontalAlignment="Left"/>
-
-                    <TextBlock Grid.Column="1" 
-                             Background="Black" 
-                             Foreground="Yellow"
-                             Padding="50,50,50,50"
-                             TextWrapping="WrapWithOverflow"
-                             Text="Scream VI follows a new Ghostface killer who targets the survivors of the 'Woodsboro legacy attacks' in New York City. A sixth Scream film was announced just weeks after the successful debut of Scream (2022), with much of the cast signing on to reprise their roles."/>
-
-                    <DockPanel Grid.Column="2">
-                        <RadioButton x:Name="RB1F6" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="08:45" Foreground="Red"/>
-                        <RadioButton x:Name="RB2F6" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="18:45" Foreground="Red"/>
-                        <RadioButton x:Name="RB3F6" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="21:45" Foreground="Red"/>
-                        <RadioButton x:Name="RB4F6" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="01:45" Foreground="Red"/>
-                        <Button      x:Name="ButtonBuyF6" DockPanel.Dock="Bottom" Foreground="White" Background="Green" Content="Buy" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold"/>
-                    </DockPanel>
-                </Grid>
-
-                <Grid Height="300" Background="Black">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="200"/>
-                        <ColumnDefinition Width="750"/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <Image Grid.Column="0" Source="/Assets/Film7/L-o-R poster.jpg" 
-                           Stretch="Fill"
-                           HorizontalAlignment="Left"/>
-
-                    <TextBlock Grid.Column="1" 
-                             Background="Black" 
-                             Foreground="Yellow"
-                             Padding="50,50,50,50"
-                             TextWrapping="WrapWithOverflow"
-                             Text="Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring."/>
-
-                    <DockPanel Grid.Column="2">
-                        <RadioButton x:Name="RB1F7" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="08:45" Foreground="Red"/>
-                        <RadioButton x:Name="RB2F7" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="18:45" Foreground="Red"/>
-                        <RadioButton x:Name="RB3F7" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="21:45" Foreground="Red"/>
-                        <RadioButton x:Name="RB4F7" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="01:45" Foreground="Red"/>
-                        <Button      x:Name="ButtonBuyF7" DockPanel.Dock="Bottom" Foreground="White" Background="Green" Content="Buy" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold"/>
-                    </DockPanel>
-                </Grid>
-
-                <Grid Height="300" Background="Black">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="200"/>
-                        <ColumnDefinition Width="750"/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <Image Grid.Column="0" Source="/Assets/Film8/wolverine preview.jpg" 
-                           Stretch="Fill"
-                           HorizontalAlignment="Left"/>
-
-                    <TextBlock Grid.Column="1" 
-                             Background="Black" 
-                             Foreground="Yellow"
-                             Padding="50,50,50,50"
-                             TextWrapping="WrapWithOverflow"
-                             Text="Wolverine comes to Japan to meet an old friend whose life he saved years ago, and gets embroiled in a conspiracy involving yakuza and mutants."/>
-
-                    <DockPanel Grid.Column="2">
-                        <RadioButton x:Name="RB1F8" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="08:45" Foreground="Red"/>
-                        <RadioButton x:Name="RB2F8" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="18:45" Foreground="Red"/>
-                        <RadioButton x:Name="RB3F8" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="21:45" Foreground="Red"/>
-                        <RadioButton x:Name="RB4F8" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="01:45" Foreground="Red"/>
-                        <Button      x:Name="ButtonBuyF8" DockPanel.Dock="Bottom" Foreground="White" Background="Green" Content="Buy" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold"/>
-                    </DockPanel>
-                </Grid>
-
-                <Grid Height="300" Background="Black">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="200"/>
-                        <ColumnDefinition Width="750"/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <Image Grid.Column="0" Source="/Assets/Film9/Puss in boots poster.jpg"
-                           Stretch="Fill"
-                           HorizontalAlignment="Left"/>
-
-                    <TextBlock Grid.Column="1" 
-                             Background="Black" 
-                             Foreground="Yellow"
-                             Padding="50,50,50,50"
-                             TextWrapping="WrapWithOverflow"
-                             Text="When Puss in Boots discovers that his passion for adventure has taken its toll and he has burned through eight of his nine lives, he launches an epic journey to restore them by finding the m... Read all."/>
-
-                    <DockPanel Grid.Column="2">
-                        <RadioButton x:Name="RB1F9" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="08:45" Foreground="Red"/>
-                        <RadioButton x:Name="RB2F9" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="18:45" Foreground="Red"/>
-                        <RadioButton x:Name="RB3F9" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="21:45" Foreground="Red"/>
-                        <RadioButton x:Name="RB4F9" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="01:45" Foreground="Red"/>
-                        <Button      x:Name="ButtonBuyF9" DockPanel.Dock="Bottom" Foreground="White" Background="Green" Content="Buy" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold"/>
-                    </DockPanel>
-                </Grid>
-
-            </StackPanel>
-        </ScrollViewer>
+                        <DockPanel Grid.Column="2">
+                            <RadioButton x:Name="Seanse1RadioButton"  GroupName="seanceRB" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="{Binding seanses[0]}"  Foreground="Red" Padding="20"/>
+                            <RadioButton x:Name="Seanse2RadioButton"  GroupName="seanceRB" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top"  Content="{Binding seanses[1]}" Foreground="Red" Padding="20"/>
+                            <RadioButton x:Name="Seanse3RadioButton"  GroupName="seanceRB" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top"  Content="{Binding seanses[2]}" Foreground="Red" Padding="20"/>
+                            <RadioButton x:Name="Seanse4RadioButton"  GroupName="seanceRB" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top"  Content="{Binding seanses[3]}" Foreground="Red" Padding="20"/>
+                            <Button      x:Name="ButtonBuy" DockPanel.Dock="Bottom" Foreground="White" Background="Green" Content="Buy" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Click="ButtonBuyF1_Click"/>
+                        </DockPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Window>

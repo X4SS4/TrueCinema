@@ -1,8 +1,11 @@
 ﻿using Cinema;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,18 +20,56 @@ namespace WPF_project_N_000047
 {
     public partial class Window3 : Window
     {
+        public ObservableCollection<Film> Films { get; set; } = new ObservableCollection<Film>();
+        public ObservableCollection<Film> AllFilms { get; set; } = new ObservableCollection<Film>();
         MainWindow? mainWindow;
+        User user;
         public Window3(User user, MainWindow mainWindow)
         {
             InitializeComponent();
+            this.DataContext = this;
+            foreach (var film in LoadFilms())
+            {
+                AllFilms.Add(film);
+                Films.Add(film);
+            }
             Message_Label.Content = $"You are welcome, {user.Name}";
+            this.user = user;
             this.mainWindow = mainWindow;
         }
 
+
+        private IEnumerable<Film> LoadFilms()
+        {
+            var films = JsonSerializer
+                .Deserialize<List<Film>>(File
+                .ReadAllText(@".\Assets\Films.json"));
+
+            if (films == null || films.Any() == false)
+                return Enumerable.Empty<Film>();
+            else
+                return films;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         private void ButtonBuyF1_Click(object sender, RoutedEventArgs e)
         {
-            var test4 = new Window4();
-            test4.Show();
+            //if(this.Seance)
+            var film = FilmsLV.Items.CurrentItem;
+            var bill = new Window4(film, user);
+            bill.Show();
         }
 
         private void Log_out_button_Click(object sender, RoutedEventArgs e)
@@ -41,5 +82,7 @@ namespace WPF_project_N_000047
         {
             mainWindow?.Show();
         }
+
+       
     }
 }

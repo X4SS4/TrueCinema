@@ -22,6 +22,7 @@
     <None Remove="Assets\Film7\L-o-R poster.jpg" />
     <None Remove="Assets\Film8\wolverine preview.jpg" />
     <None Remove="Assets\Film9\Puss in boots poster.jpg" />
+    <None Remove="Assets\Films.json" />
     <None Remove="Assets\john wick chapter 4 poster.jpg" />
     <None Remove="Assets\Joker poster.jpg" />
     <None Remove="Assets\L-o-R poster.jpg" />
@@ -59,6 +60,9 @@
     <Resource Include="Assets\Film9\Puss in boots poster.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Content Include="Assets\Films.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Resource Include="Assets\Logo.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>

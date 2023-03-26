@@ -29,6 +29,7 @@ namespace WPF_project_N_000047
         public Window2(MainWindow mainWindow)
         {
             InitializeComponent();
+            this.DataContext = this;
             mainWindow.Hide();
             this.mainWindow = mainWindow;
             //mainWindow.Hide();

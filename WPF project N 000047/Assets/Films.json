@@ -1,0 +1,111 @@
+[
+  {
+    "price": 54.71,
+    "filmName": "John Wick 4",
+    "imagePath": "Assets/Film1/john wick chapter 4 poster.jpg",
+    "filmContent": "John Wick uncovers a path to defeating The High Table. But before he can earn his freedom, Wick must face off against a new enemy with powerful alliances across the globe and forces that turn old friends into foes.",
+    "seanses": [
+      "08:45",
+      "18:45",
+      "21:45",
+      "01:45"
+    ]
+  },
+  {
+
+    "price": 60.22,
+    "filmName": "Shazam",
+    "imagePath": "Assets/Film2/shazam movie shazam.jpg",
+    "filmContent": "Fury of the Gods is a 2023 American superhero film based on the DC Comics character Shazam. Produced by New Line Cinema, DC Studios, and the Safran Company, and distributed by Warner Bros. Pictures, it is the sequel to Shazam! (2019) and the 12th installment in the DC Extended Universe (DCEU).",
+    "seanses": [
+      "11:45",
+      "13:45",
+      "15:45",
+      "17:45"
+    ]
+  },
+  {
+    "price": 70.0,
+    "filmName": "Avatar 2",
+    "imagePath": "Assets/Film3/avatar 2 poster.jpg",
+    "filmContent": "Jake Sully lives with his newfound family formed on the extrasolar moon Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Na'vi race to protect their home.",
+    "seanses": [
+      "13:45",
+      "16:45",
+      "20:45",
+      "00:45"
+    ]
+  },
+  {
+    "price": 77.17,
+    "filmName": "Ant man 3",
+    "imagePath": "Assets/Film4/Ant man 3 poster.jpg",
+    "filmContent": "Plot. During her days of entrapment in the Quantum Realm, Janet van Dyne encounters an exiled traveler named Kang. In the present day, after the Battle of Earth, Scott Lang has become a successful memoirist and has been living happily with his girlfriend, Hope van Dyne.",
+    "seanses": [
+      "11:45",
+      "13:45",
+      "17:45",
+      "21:45"
+    ]
+  },
+  {
+    "price": 68.68,
+    "filmName": "Joker",
+    "imagePath": "Assets/Film5/Joker poster.jpg",
+    "filmContent": "Joaquin Phoenix as Arthur Fleck / Joker: A mentally ill, impoverished party clown and stand-up comedian disregarded by society, whose history of abuse causes him to become a nihilistic criminal with a clown-themed persona.",
+    "seanses": [
+      "13:45",
+      "16:45",
+      "19:45",
+      "00:45"
+    ]
+  },
+  {
+    "price": 76.99,
+    "filmName": "Scream 6",
+    "imagePath": "Assets/Film6/scream 6 poster.jpg",
+    "filmContent": "Scream VI follows a new Ghostface killer who targets the survivors of the 'Woodsboro legacy attacks' in New York City. A sixth Scream film was announced just weeks after the successful debut of Scream (2022), with much of the cast signing on to reprise their roles.",
+    "seanses": [
+      "17:45",
+      "19:45",
+      "22:45",
+      "01:45"
+    ]
+  },
+  {
+    "price": 94.59,
+    "filmName": "Lord of Rings",
+    "imagePath": "Assets/Film7/L-o-R poster.jpg",
+    "filmContent": "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
+    "seanses": [
+      "10:45",
+      "14:45",
+      "18:45",
+      "22:45"
+    ]
+  },
+  {
+    "price": 97.45,
+    "filmName": "Wolverine",
+    "imagePath": "Assets/Film8/wolverine preview.jpg",
+    "filmContent": "Wolverine comes to Japan to meet an old friend whose life he saved years ago, and gets embroiled in a conspiracy involving yakuza and mutants.",
+    "seanses": [
+      "11:45",
+      "13:45",
+      "17:45",
+      "21:45"
+    ]
+  },
+  {
+    "price": 64.34,
+    "filmName": "Puss in boots",
+    "imagePath": "Assets/Film9/Puss in boots poster.jpg",
+    "filmContent": "When Puss in Boots discovers that his passion for adventure has taken its toll and he has burned through eight of his nine lives, he launches an epic journey to restore them by finding the m... ",
+    "seanses": [
+      "09:45",
+      "11:45",
+      "13:45",
+      "15:45"
+    ]
+  }
+]

@@ -1,6 +1,7 @@
 ﻿using Cinema;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -20,11 +21,12 @@ namespace WPF_project_N_000047
 
     public partial class MainWindow : Window
     {
-
+        
         public static List<User> users = new();
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = this;
         }
 
         /*--------------------Mouse Enter/Leave EVENTS--------------------*/

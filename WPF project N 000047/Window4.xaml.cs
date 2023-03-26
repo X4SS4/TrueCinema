@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cinema;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,21 @@ namespace WPF_project_N_000047
     /// </summary>
     public partial class Window4 : Window
     {
-        public Window4()
+        Film? film;
+        User? user;
+        public Window4(object film, User user)
         {
             InitializeComponent();
+            this.DataContext = this;
+            this.film = (Film?)film;
+            this.user = user;
+            NameTB.Text = user.Name;
+            SurnameTB.Text = user.Surname;
+            TimeTB.Text = this.film.seanses[1];
+            PaidTB.Text = this.film.price.ToString();
+            RoomTB.Text = this.film.filmName;
         }
+
+        
     }
 }

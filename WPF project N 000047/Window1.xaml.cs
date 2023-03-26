@@ -1,8 +1,10 @@
 ﻿using Cinema;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -26,8 +28,11 @@ namespace WPF_project_N_000047
         public Window1(MainWindow mainWindow)
         {
             InitializeComponent();
+            this.DataContext = this;
             this.mainWindow = mainWindow;
         }
+
+        
 
         string SBeditor(string stringToRead)
         {

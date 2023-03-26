@@ -7,14 +7,15 @@ using System.Windows.Automation.Peers;
 
 namespace Cinema
 {
-    public class Ticket
+    public class Film
     {
-        public string? Name { get; set; }
-        public string? Surname { get; set; }
-        public string? Time { get; set; }
-        public double Paid_amount { get; set; }
-        public int Room { get; set; }
+        public double price { get; set; }
+        public string? filmName { get; set; }
+        public string? imagePath { get; set; }
+        public string? filmContent { get; set; }
+        public string[]? seanses { get; set; }
     }
+   
     public class User
     {
 		private string? name;
@@ -23,7 +24,6 @@ namespace Cinema
         private string? card_number;
         private string? password;
         private string? mobile_number;
-        public List<Ticket> tickets = new List<Ticket>();
 		public string Name
         {
             get => name;

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_project_N_000047"
         mc:Ignorable="d"
-        Title="Ticket" Height="450" Width="200">
+        Title="Ticket" Height="450" Width="450">
     <Grid Background="Yellow">
         <Grid.RowDefinitions>
             <RowDefinition Height="80"/>
@@ -14,15 +14,15 @@
         <Image Source="Assets/Logo.png"/>
         <UniformGrid Columns="2" Rows="5" Grid.Row="1">
             <TextBlock FontSize="20" FontWeight="ExtraBold" DockPanel.Dock="Top" Text="Name: " Padding="19" TextAlignment="Center"/>
-            <TextBox Background="Yellow"/> 
+            <TextBlock x:Name="NameTB" Background="Yellow" FontSize="15" Padding="19"/> 
             <TextBlock FontSize="15" FontWeight="ExtraBold" DockPanel.Dock="Top" Text="Surname: " Padding="19" TextAlignment="Center"/>
-            <TextBox Background="Yellow"/>
+            <TextBlock x:Name="SurnameTB" Background="Yellow" FontSize="15" Padding="19"/>
             <TextBlock FontSize="20" FontWeight="ExtraBold" DockPanel.Dock="Top" Text="Time: " Padding="19" TextAlignment="Center"/>
-            <TextBox Background="Yellow"/>
+            <TextBlock x:Name="TimeTB" Background="Yellow" FontSize="15" Padding="19"/>
             <TextBlock FontSize="20" FontWeight="ExtraBold" DockPanel.Dock="Top" Text="Paid: " Padding="19" TextAlignment="Center"/>
-            <TextBox Background="Yellow"/>
+            <TextBlock x:Name="PaidTB" Background="Yellow" FontSize="15" Padding="19"/>
             <TextBlock FontSize="20" FontWeight="ExtraBold" DockPanel.Dock="Top" Text="Room: " Padding="19" TextAlignment="Center"/>
-            <TextBox Background="Yellow"/>
+            <TextBlock x:Name="RoomTB" Background="Yellow" FontSize="15" Padding="19" />
         </UniformGrid>
     </Grid>
 </Window>
