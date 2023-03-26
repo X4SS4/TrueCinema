@@ -23,5 +23,11 @@ namespace WPF_project_N_000047
         {
             InitializeComponent();
         }
+
+        private void ButtonBuyF1_Click(object sender, RoutedEventArgs e)
+        {
+            var test4 = new Window4();
+            test4.Show();
+        }
     }
 }

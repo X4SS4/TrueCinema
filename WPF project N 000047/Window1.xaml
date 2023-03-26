@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_project_N_000047"
         mc:Ignorable="d"
+        Closing="Window_Closing"
         Title="Sign up" Height="450" Width="800">
     <Grid Background="Yellow">
         <Grid.ColumnDefinitions>

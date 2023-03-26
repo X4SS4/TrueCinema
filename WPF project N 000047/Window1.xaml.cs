@@ -19,19 +19,29 @@ namespace WPF_project_N_000047
     /// </summary>
     public partial class Window1 : Window
     {
-        public Window1()
+        MainWindow mainWindow;
+        public Window1(MainWindow mainWindow)
         {
             InitializeComponent();
+            this.mainWindow = mainWindow;
         }
 
-        private void SUPback_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
 
         private void SUPsave_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void SUPback_Click(object sender, RoutedEventArgs e)
+        {
+            this.mainWindow.Show();
+            Close();
+        }
+
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            this.mainWindow.Show();
         }
     }
 }

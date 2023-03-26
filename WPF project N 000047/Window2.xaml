@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_project_N_000047"
         mc:Ignorable="d"
+        Closing="Window_Closing"
         Title="Sign in" Height="250" Width="800">
     <Grid Background="Yellow">
         <Grid.RowDefinitions>
@@ -12,39 +13,42 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Image Source="Assets/Logo.png"/>
+        <Label x:Name="Error_Label" Foreground="Red"/>
         <UniformGrid Background="Black" Grid.Row="2" Columns="2" Rows="2">
             <UniformGrid Columns="2">
                 <Label FontSize="40" FontStyle="Italic" FontWeight="ExtraBold"
                    Content="Login" Foreground="Yellow" 
                    HorizontalContentAlignment="Center"
                    VerticalContentAlignment="Center"/>
-                <TextBox HorizontalContentAlignment="Center"
-                     VerticalContentAlignment="Center"
-                     Background="Orange"
-                     Foreground="Black"
-                     FontSize="20"
-                     FontWeight="ExtraBold"
-                     FontStyle="Italic"/>
+                <TextBox x:Name="Login_box"
+                         HorizontalContentAlignment="Center"
+                         VerticalContentAlignment="Center"
+                         Background="Orange"
+                         Foreground="Black"
+                         FontSize="20"
+                         FontWeight="ExtraBold"
+                         FontStyle="Italic"/>
             </UniformGrid>
             <UniformGrid Columns="2">
                 <Label FontSize="30" FontStyle="Italic" FontWeight="ExtraBold"
                    Content="Password" Foreground="Yellow" 
                    HorizontalContentAlignment="Center"
                    VerticalContentAlignment="Center"/>
-                <TextBox HorizontalContentAlignment="Center"
-                     VerticalContentAlignment="Center"
-                     Background="Orange"
-                     Foreground="Black"
-                     FontSize="20"
-                     FontWeight="ExtraBold"
-                     FontStyle="Italic"/>
+                <TextBox x:Name="Password_box"
+                         HorizontalContentAlignment="Center"
+                         VerticalContentAlignment="Center"
+                         Background="Orange"
+                         Foreground="Black"
+                         FontSize="20"
+                         FontWeight="ExtraBold"
+                         FontStyle="Italic" TextChanged="Password_box_TextChanged"/>
             </UniformGrid>
             <Button Background="Tomato" 
                     FontWeight="Bold" FontSize="30" FontStyle="Oblique"
-                    Content="Back"/>
+                    Content="Back" Click="Button_Click_1"/>
             <Button Background="GreenYellow" 
                     FontWeight="Bold" FontSize="30" FontStyle="Oblique"
-                    Content="Login"/>
+                    Content="Login" Click="Button_Click"/>
         </UniformGrid>
     </Grid>
 </Window>

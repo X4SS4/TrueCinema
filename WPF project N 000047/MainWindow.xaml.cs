@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cinema;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,7 +23,6 @@ namespace WPF_project_N_000047
         public MainWindow()
         {
             InitializeComponent();
-           
         }
 
         /*--------------------Mouse Enter/Leave EVENTS--------------------*/
@@ -51,14 +51,21 @@ namespace WPF_project_N_000047
         /*------------------------------------Click EVENTS------------------------------------*/
         private void Sign_in_Click(object sender, RoutedEventArgs e)
         {
-            var test = new Window3();
-            test.Show();
+            var windowSIN = new Window2(this);
+            windowSIN.Show();
+            Hide();
         }
 
         private void Sign_up_Click(object sender, RoutedEventArgs e)
         {
-            var windowSUP = new Window1();
+            var windowSUP = new Window1(this);
             windowSUP.Show();
+            Hide();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
         }
     }
 }

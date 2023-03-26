@@ -66,7 +66,7 @@
                         <RadioButton x:Name="RB2F1" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="18:45" Foreground="Red"/>
                         <RadioButton x:Name="RB3F1" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="21:45" Foreground="Red"/>
                         <RadioButton x:Name="RB4F1" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="01:45" Foreground="Red"/>
-                        <Button      x:Name="ButtonBuyF1" DockPanel.Dock="Bottom" Foreground="White" Background="Green" Content="Buy" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold"/>
+                        <Button      x:Name="ButtonBuyF1" DockPanel.Dock="Bottom" Foreground="White" Background="Green" Content="Buy" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Click="ButtonBuyF1_Click"/>
                     </DockPanel>
                 </Grid>
 
