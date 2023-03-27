@@ -43,8 +43,8 @@
 
         </UniformGrid>
 
-        <ListView x:Name="FilmsLV" Background="Black" Grid.Row="1" ItemsSource="{Binding Films}">
-            <ListView.ItemTemplate>
+        <ListView  x:Name="FilmsLV" Background="Black" Grid.Row="1" ItemsSource="{Binding Films}">
+            <ListView.ItemTemplate >
                 <DataTemplate>
                     <Grid Height="300" Background="Black">
                         <Grid.ColumnDefinitions>
@@ -63,27 +63,6 @@
                              Padding="50,50,50,50"
                              TextWrapping="WrapWithOverflow"
                              Text="{Binding filmContent}"/>
-
-                        <!--<ListView Grid.Column="2" ItemsSource="{Binding seanses}">
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <Grid>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="*"/>
-                                            <RowDefinition Height="*"/>
-                                            <RowDefinition Height="*"/>
-                                            <RowDefinition Height="*"/>
-                                            <RowDefinition Height="*"/>
-                                        </Grid.RowDefinitions>
-                                        <RadioButton Grid.Row="0" x:Name="RB1F1"  FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="{Binding seanses[0]}" Foreground="Red"/>
-                                        <RadioButton Grid.Row="1" x:Name="RB2F1" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top"  Content="{Binding seanses[1]}" Foreground="Red"/>
-                                        <RadioButton Grid.Row="2" x:Name="RB3F1" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top"  Content="{Binding seanses[2]}" Foreground="Red"/>
-                                        <RadioButton Grid.Row="3" x:Name="RB4F1" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top"  Content="{Binding seanses[3]}" Foreground="Red"/>
-                                        <Button      Grid.Row="4"  x:Name="ButtonBuyF1" DockPanel.Dock="Bottom" Foreground="White" Background="Green" Content="Buy" FontSize="30" FontStyle="Oblique" FontWeight="ExtraBold" Click="ButtonBuyF1_Click"/>
-                                    </Grid>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>-->
 
                         <DockPanel Grid.Column="2">
                             <RadioButton x:Name="Seanse1RadioButton"  GroupName="seanceRB" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="{Binding seanses[0]}"  Foreground="Red" Padding="20"/>

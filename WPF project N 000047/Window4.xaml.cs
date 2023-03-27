@@ -22,17 +22,17 @@ namespace WPF_project_N_000047
     {
         Film? film;
         User? user;
-        public Window4(object film, User user)
+        public Window4(Window3 window3, int filmindex, User user)
         {
             InitializeComponent();
             this.DataContext = this;
-            this.film = (Film?)film;
+            this.film = window3.Films[filmindex];
             this.user = user;
             NameTB.Text = user.Name;
             SurnameTB.Text = user.Surname;
-            TimeTB.Text = this.film.seanses[1];
-            PaidTB.Text = this.film.price.ToString();
-            RoomTB.Text = this.film.filmName;
+            TimeTB.Text = window3.Films[filmindex].seanses[1];
+            PaidTB.Text = window3.Films[filmindex].price.ToString();
+            RoomTB.Text = window3.Films[filmindex].filmName;
         }
 
         

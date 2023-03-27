@@ -32,10 +32,7 @@ namespace WPF_project_N_000047
             this.DataContext = this;
             mainWindow.Hide();
             this.mainWindow = mainWindow;
-            //mainWindow.Hide();
             MainWindow.users.Add(new User { Name = "Zabil", Login = "Xassa", Password = "Zabil123" });
-            //var json = File.ReadAllText("user.json");
-            //users = JsonSerializer.Deserialize<List<User>>(json);
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)

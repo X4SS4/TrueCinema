@@ -51,24 +51,12 @@ namespace WPF_project_N_000047
                 return films;
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         private void ButtonBuyF1_Click(object sender, RoutedEventArgs e)
         {
             //if(this.Seance)
-            var film = FilmsLV.Items.CurrentItem;
-            var bill = new Window4(film, user);
+
+            var film = FilmsLV.SelectedIndex;
+            var bill = new Window4(this, film, user);
             bill.Show();
         }
 
@@ -82,7 +70,5 @@ namespace WPF_project_N_000047
         {
             mainWindow?.Show();
         }
-
-       
     }
 }
