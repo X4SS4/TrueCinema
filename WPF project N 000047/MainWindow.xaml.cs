@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -22,7 +23,8 @@ namespace WPF_project_N_000047
     public partial class MainWindow : Window
     {
         
-        public static List<User> users = new();
+        public static List<User> users = JsonSerializer.Deserialize<List<User>>(File.ReadAllText(@".\Assets\Users.json")) ?? new List<User>();
+
         public MainWindow()
         {
             InitializeComponent();

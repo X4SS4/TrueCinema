@@ -51,6 +51,8 @@ namespace WPF_project_N_000047
                 && this.newUser.Mobile_number == mobileNumber_TB.Text)
             {
                 MainWindow.users.Add(this.newUser);
+                var json = JsonSerializer.Serialize(MainWindow.users);
+                File.WriteAllText(@".\Assets\Users.json", json);
                 var Loginwindow = new Window2(mainWindow);
 
                 mainWindow.Hide();

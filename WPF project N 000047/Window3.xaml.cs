@@ -24,6 +24,7 @@ namespace WPF_project_N_000047
         public ObservableCollection<Film> AllFilms { get; set; } = new ObservableCollection<Film>();
         MainWindow? mainWindow;
         User user;
+        public string searchFilm {get;set;}
         public Window3(User user, MainWindow mainWindow)
         {
             InitializeComponent();
@@ -69,6 +70,16 @@ namespace WPF_project_N_000047
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             mainWindow?.Show();
+        }
+
+        private void Find_button_Click(object sender, RoutedEventArgs e)
+        {
+            var allFilms = AllFilms.Where(film => film.filmName.Contains(searchFilm));
+            Films.Clear();
+            foreach (var film in allFilms)
+            {
+                Films.Add(film);
+            }
         }
     }
 }

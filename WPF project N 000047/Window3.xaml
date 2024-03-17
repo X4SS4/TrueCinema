@@ -17,22 +17,16 @@
         <UniformGrid Grid.Row="0" Columns="4">
             <Image Source="Assets/Logo.png"/>
 
-            <ComboBox Margin="0,0,0,60">
-                <Label Content="Morning"/>
-                <Label Content="Noon"/>
-                <Label Content="Evening"/>
-                <Label Content="Night"/>
-            </ComboBox>
-
             <UniformGrid Rows="2">
-                <TextBox/>
+                <TextBox Text="{Binding searchFilm}"/>
 
                 <Button x:Name="Find_button" Content="Find"
                         Height="20" 
                         Margin="120, 0, 20, 0"
                         Background="Black"
                         Foreground="Yellow"
-                        FontWeight="Bold" FontSize="11" FontStyle="Oblique"/>
+                        FontWeight="Bold" FontSize="11" FontStyle="Oblique"
+                        Click="Find_button_Click"/>
             </UniformGrid>
 
 
