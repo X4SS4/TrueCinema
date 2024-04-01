@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="CinemaX.Views.MoviesWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CinemaX.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="1300">
+    <Grid Background="Yellow">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label FontSize="10" FontWeight="ExtraBold" FontStyle="Italic" Foreground="Green" Content="{Binding WelcomeLabel}"/>
+
+        <UniformGrid Grid.Row="0" Columns="4">
+            <Image Source="../Assets/Logo.png"/>
+
+            <UniformGrid Rows="2">
+                <TextBox Text="{Binding SearchFilm}"/>
+
+                <Button x:Name="Find_button" Content="Find"
+                        Height="20" 
+                        Margin="120, 0, 20, 0"
+                        Background="Black"
+                        Foreground="Yellow"
+                        FontWeight="Bold" FontSize="11" FontStyle="Oblique"
+                        Command="{Binding FindFilmCommand}"/>
+            </UniformGrid>
+
+
+            <Button Background="Tomato" 
+                    FontWeight="Bold"
+                    FontSize="17" 
+                    FontStyle="Oblique"
+                    Content="Log out"
+                    Margin="30, 30, 30, 30" 
+                    Command="{Binding LogOutCommand}"/>
+
+        </UniformGrid>
+
+        <ListView  x:Name="FilmsLV" Background="Black" Grid.Row="1" ItemsSource="{Binding Films}">
+            <ListView.ItemTemplate >
+                <DataTemplate>
+                    <Grid Height="300" Background="Black">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="750"/>
+                            <ColumnDefinition Width="450"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" Source="{Binding ImagePath}" 
+                       Stretch="Fill"
+                       HorizontalAlignment="Left"/>
+
+                        <TextBlock Grid.Column="1" 
+                         Background="Black" 
+                         Foreground="Yellow"
+                         Padding="50,50,50,50"
+                         TextWrapping="WrapWithOverflow"
+                         Text="{Binding FilmContent}"/>
+
+                        <DockPanel Grid.Column="2">
+                            <RadioButton x:Name="Seanse1RadioButton"  GroupName="seanceRB" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top" Content="{Binding Seanses[0]}"  Foreground="Red" Padding="20"/>
+                            <RadioButton x:Name="Seanse2RadioButton"  GroupName="seanceRB" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top"  Content="{Binding Seanses[1]}" Foreground="Red" Padding="20"/>
+                            <RadioButton x:Name="Seanse3RadioButton"  GroupName="seanceRB" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top"  Content="{Binding Seanses[2]}" Foreground="Red" Padding="20"/>
+                            <RadioButton x:Name="Seanse4RadioButton"  GroupName="seanceRB" FontStyle="Oblique" FontWeight="ExtraBold" Height="60" DockPanel.Dock="Top"  Content="{Binding Seanses[3]}" Foreground="Red" Padding="20"/>
+                            <Button DockPanel.Dock="Bottom" 
+                                    Foreground="White" 
+                                    Background="Green" 
+                                    Content="Buy" 
+                                    FontSize="30" 
+                                    FontStyle="Oblique" 
+                                    FontWeight="ExtraBold" 
+                                    Command="{Binding BuyFilmCommand}"/>
+                        </DockPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</UserControl>
