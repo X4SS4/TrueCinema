@@ -30,5 +30,4 @@
             <TextBlock Background="Yellow" FontSize="15" Padding="19" Text="{Binding Buyedfilm.FilmName}"/>
         </UniformGrid>
     </Grid>
-
 </UserControl>
