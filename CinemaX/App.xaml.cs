@@ -12,32 +12,26 @@ public partial class App : Application {
 
     protected override void OnStartup(StartupEventArgs e) {
         base.OnStartup(e);
-
         ConfigureContainer();
-
         StartWindow<HomeViewModel>();
     }
 
     private void ConfigureContainer() {
         ServiceContainer.RegisterSingleton<IMessenger, Messenger>();
-
         ServiceContainer.RegisterSingleton<HomeViewModel>();
         ServiceContainer.RegisterSingleton<MainViewModel>();
         ServiceContainer.RegisterSingleton<LoginViewModel>();
         ServiceContainer.RegisterSingleton<MoviesViewModel>();
         ServiceContainer.RegisterSingleton<ReceiptViewModel>();
         ServiceContainer.RegisterSingleton<RegistrationViewModel>();
-
         ServiceContainer.Verify();
     }
 
     private void StartWindow<T>() where T : ViewModelBase {
         var startView = new MainWindow();
-
         var startViewModel = ServiceContainer.GetInstance<MainViewModel>();
         startViewModel.ActiveViewModel = ServiceContainer.GetInstance<T>();
         startView.DataContext = startViewModel;
-
         startView.ShowDialog();
     }
 }

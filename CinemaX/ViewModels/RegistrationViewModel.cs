@@ -1,17 +1,14 @@
-﻿using CinemaX.Messager.Messages;
-using CinemaX.Messager.Services.Base;
-using CinemaX.Tools;
-using CinemaX.ViewModels.Base;
-using CinemaX.Views;
-using System;
-using System.Collections.ObjectModel;
+﻿namespace CinemaX.ViewModels;
+
 using System.IO;
 using System.Text;
+using CinemaX.Tools;
 using System.Text.Json;
-using System.Windows.Input;
+using CinemaX.ViewModels.Base;
+using CinemaX.Messager.Messages;
 using WPF_project_N_000047.Models;
+using CinemaX.Messager.Services.Base;
 
-namespace CinemaX.ViewModels;
 public class RegistrationViewModel : ViewModelBase
 {
     private readonly IMessenger messenger;

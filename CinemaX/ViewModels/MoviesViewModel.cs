@@ -1,16 +1,15 @@
 ﻿namespace CinemaX.ViewModels;
 
-using CinemaX.Messager.Messages;
-using CinemaX.Messager.Services.Base;
-using CinemaX.Tools;
-using CinemaX.ViewModels.Base;
-using Microsoft.Win32;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
+using CinemaX.Tools;
 using System.Text.Json;
+using CinemaX.ViewModels.Base;
+using CinemaX.Messager.Messages;
+using System.Collections.Generic;
 using WPF_project_N_000047.Models;
+using CinemaX.Messager.Services.Base;
+using System.Collections.ObjectModel;
 
 public class MoviesViewModel : ViewModelBase
 {
@@ -18,6 +17,13 @@ public class MoviesViewModel : ViewModelBase
     private readonly IMessenger _messenger;
     public ObservableCollection<Film> Films { get; set; } = new ObservableCollection<Film>();
     public ObservableCollection<Film> AllFilms { get; set; } = new ObservableCollection<Film>();
+
+    private Film _selectedFilm;
+    public Film SelectedFilm
+    {
+        get => this._selectedFilm;
+        set => base.PropertyChange(out _selectedFilm, value);
+    }
 
     private string _searchFilm;
     public string SearchFilm
@@ -38,10 +44,11 @@ public class MoviesViewModel : ViewModelBase
         this._messenger = messenger;
         foreach (var film in LoadFilms())
         {
+            var originalPath = film.ImagePath;
+            film.ImagePath = "../" + originalPath;
             AllFilms.Add(film);
             Films.Add(film);
         }
-        WelcomeLabel = $"You are welcome, {User?.Name}";
     }
     private IEnumerable<Film> LoadFilms()
     {
@@ -56,6 +63,15 @@ public class MoviesViewModel : ViewModelBase
     }
 
     #region Commands
+
+    private MyCommand _loadCommand;
+    public MyCommand LoadCommand
+    {
+        get => this._loadCommand ??= new MyCommand(
+            action: () => WelcomeLabel = $"You are welcome {User?.Name}",
+            predicate: () => true);
+        set => base.PropertyChange(out this._loadCommand, value);
+    }
 
     private MyCommand _logOutCommand;
     public MyCommand LogOutCommand
@@ -90,7 +106,7 @@ public class MoviesViewModel : ViewModelBase
 
     void Buy()
     {
-        var openFileDialog = new OpenFileDialog();
+        ReceiptViewModel.Buyedfilm = SelectedFilm;
         this._messenger.Send(new NavigationMessage(typeof(ReceiptViewModel)));
     }
 

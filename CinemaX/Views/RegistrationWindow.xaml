@@ -18,7 +18,7 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
             <UniformGrid Grid.Row="0" Margin="10,-5,-10,5">
-                <Label x:Name="message_label" FontWeight="Bold" Foreground="Red"/>
+                <Label FontWeight="Bold" Foreground="Red" Content="{Binding ErrorLog}"/>
                 <Image Source="../Assets/Logo.png" Grid.Column="0"/>
             </UniformGrid>
             <UniformGrid Grid.Row="1">

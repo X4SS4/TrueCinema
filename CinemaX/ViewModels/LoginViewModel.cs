@@ -4,7 +4,12 @@ using CinemaX.Messager.Messages;
 using CinemaX.Messager.Services.Base;
 using CinemaX.Tools;
 using CinemaX.ViewModels.Base;
+using System.ComponentModel.Design;
 using System.Linq;
+using System.Windows;
+using SimpleInjector;
+using CinemaX.Messager.Services;
+using WPF_project_N_000047.Models;
 
 public class LoginViewModel : ViewModelBase
 {

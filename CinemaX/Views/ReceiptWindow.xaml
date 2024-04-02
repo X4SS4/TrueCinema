@@ -2,11 +2,33 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:CinemaX.Views"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors" xmlns:viewmodels="clr-namespace:CinemaX.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:ReceiptViewModel}"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+             d:DesignHeight="450" d:DesignWidth="350">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid Background="Yellow">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Image Source="../Assets/Logo.png"/>
+        <UniformGrid Columns="2" Rows="5" Grid.Row="1">
+            <TextBlock FontSize="20" FontWeight="ExtraBold" DockPanel.Dock="Top" Text="Name: " Padding="19" TextAlignment="Center"/>
+            <TextBlock Background="Yellow" FontSize="15" Padding="19" Text="{Binding ReceiptUser.Name}"/>
+            <TextBlock FontSize="15" FontWeight="ExtraBold" DockPanel.Dock="Top" Text="Surname: " Padding="19" TextAlignment="Center"/>
+            <TextBlock Background="Yellow" FontSize="15" Padding="19" Text="{Binding ReceiptUser.Surname}"/>
+            <TextBlock FontSize="20" FontWeight="ExtraBold" DockPanel.Dock="Top" Text="Time: " Padding="19" TextAlignment="Center"/>
+            <TextBlock Background="Yellow" FontSize="15" Padding="19" Text="{Binding Buyedfilm.Seanses[1]}"/>
+            <TextBlock FontSize="20" FontWeight="ExtraBold" DockPanel.Dock="Top" Text="Paid: " Padding="19" TextAlignment="Center"/>
+            <TextBlock Background="Yellow" FontSize="15" Padding="19" Text="{Binding Buyedfilm.Price}"/>
+            <TextBlock FontSize="20" FontWeight="ExtraBold" DockPanel.Dock="Top" Text="Room: " Padding="19" TextAlignment="Center"/>
+            <TextBlock Background="Yellow" FontSize="15" Padding="19" Text="{Binding Buyedfilm.FilmName}"/>
+        </UniformGrid>
     </Grid>
+
 </UserControl>
